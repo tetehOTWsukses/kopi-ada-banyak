@@ -1,0 +1,298 @@
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Kopi Nusantara - Budaya Indonesia
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;family=Playfair+Display&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Scroll animation styles */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in-left.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in-right.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .zoom-in.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Batik motif background as repeated images -->
+  <div class="fixed inset-0 -z-10 opacity-10 pointer-events-none grid grid-cols-6 gap-4 p-4">
+   <img alt="Motif batik tradisional warna coklat dengan pola geometris dan floral" class="w-full h-full object-cover rounded" height="100" src="https://storage.googleapis.com/a1aa/image/4d14aac8-ee5f-417d-b584-354f515868b0.jpg" width="100"/>
+   <img alt="Motif batik warna coklat tua dengan pola garis-garis dan titik-titik" class="w-full h-full object-cover rounded" height="100" src="https://storage.googleapis.com/a1aa/image/72b142fe-0df3-4c37-a17e-d69632cfe1c0.jpg" width="100"/>
+   <img alt="Motif batik warna coklat kemerahan dengan pola bunga dan daun" class="w-full h-full object-cover rounded" height="100" src="https://storage.googleapis.com/a1aa/image/0994f370-7751-4e9f-ac53-e7ee30c9e8b3.jpg" width="100"/>
+   <img alt="Motif batik tradisional warna coklat dengan pola geometris dan floral" class="w-full h-full object-cover rounded" height="100" src="https://storage.googleapis.com/a1aa/image/4d14aac8-ee5f-417d-b584-354f515868b0.jpg" width="100"/>
+   <img alt="Motif batik warna coklat tua dengan pola garis-garis dan titik-titik" class="w-full h-full object-cover rounded" height="100" src="https://storage.googleapis.com/a1aa/image/72b142fe-0df3-4c37-a17e-d69632cfe1c0.jpg" width="100"/>
+   <img alt="Motif batik warna coklat kemerahan dengan pola bunga dan daun" class="w-full h-full object-cover rounded" height="100" src="https://storage.googleapis.com/a1aa/image/0994f370-7751-4e9f-ac53-e7ee30c9e8b3.jpg" width="100"/>
+  </div>
+  <!-- Navbar -->
+  <nav class="bg-white bg-opacity-90 backdrop-blur-md shadow-md sticky top-0 z-20">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+     <a class="flex items-center space-x-2" href="#">
+      <img alt="Logo kopi nusantara bergambar biji kopi coklat" class="h-10 w-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/90462eae-56df-4091-3860-49e8152deb98.jpg" width="40"/>
+      <span class="text-2xl font-playfair text-brown-900 font-bold text-[#6B4226]">
+       Kopi Nusantara
+      </span>
+     </a>
+     <div class="hidden md:flex space-x-8 font-semibold text-[#6B4226]">
+      <a class="hover:text-[#A0522D] transition" href="#home">
+       Beranda
+      </a>
+      <a class="hover:text-[#A0522D] transition" href="#about">
+       Tentang Kopi
+      </a>
+      <a class="hover:text-[#A0522D] transition" href="#regions">
+       Daerah Kopi
+      </a>
+      <a class="hover:text-[#A0522D] transition" href="#gallery">
+       Galeri
+      </a>
+      <a class="hover:text-[#A0522D] transition" href="#contact">
+       Kontak
+      </a>
+     </div>
+     <div class="md:hidden">
+      <button aria-label="Toggle menu" class="text-[#6B4226] focus:outline-none focus:ring-2 focus:ring-[#A0522D]" id="menu-btn">
+       <i class="fas fa-bars fa-lg">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <div class="hidden md:hidden bg-white bg-opacity-90 backdrop-blur-md shadow-inner" id="mobile-menu">
+    <a class="block px-4 py-2 text-[#6B4226] font-semibold hover:bg-[#A0522D] hover:text-white transition" href="#home">
+     Beranda
+    </a>
+    <a class="block px-4 py-2 text-[#6B4226] font-semibold hover:bg-[#A0522D] hover:text-white transition" href="#about">
+     Tentang Kopi
+    </a>
+    <a class="block px-4 py-2 text-[#6B4226] font-semibold hover:bg-[#A0522D] hover:text-white transition" href="#regions">
+     Daerah Kopi
+    </a>
+    <a class="block px-4 py-2 text-[#6B4226] font-semibold hover:bg-[#A0522D] hover:text-white transition" href="#gallery">
+     Galeri
+    </a>
+    <a class="block px-4 py-2 text-[#6B4226] font-semibold hover:bg-[#A0522D] hover:text-white transition" href="#contact">
+     Kontak
+    </a>
+   </div>
+  </nav>
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+   <!-- Hero Section -->
+   <section class="text-center mb-16 fade-in-up" id="home">
+    <h1 class="text-4xl sm:text-5xl font-playfair font-bold text-[#6B4226] mb-4">
+     Selamat Datang di Kopi Nusantara
+    </h1>
+    <p class="text-lg sm:text-xl text-[#A0522D] max-w-3xl mx-auto">
+     Menyelami kekayaan budaya Indonesia melalui cita rasa kopi dari berbagai daerah dengan sentuhan motif batik yang memukau.
+    </p>
+    <img alt="Gelas kopi hitam panas di atas meja kayu dengan motif batik tradisional Indonesia berwarna coklat" class="mx-auto mt-8 rounded-lg shadow-lg w-full max-w-xl object-cover zoom-in" height="350" src="https://storage.googleapis.com/a1aa/image/e4aa4e7a-e99b-4b78-86e8-d258aa317d66.jpg" width="600"/>
+   </section>
+   <!-- About Section -->
+   <section class="mb-20 grid md:grid-cols-2 gap-10 items-center fade-in-left" id="about">
+    <img alt="Petani kopi tradisional Indonesia sedang memetik biji kopi di ladang dengan latar belakang pegunungan hijau" class="rounded-lg shadow-md object-cover w-full" height="350" src="https://storage.googleapis.com/a1aa/image/d916cc49-1bb4-4931-ac55-7c7492bceeab.jpg" width="500"/>
+    <div class="text-[#6B4226] text-lg leading-relaxed">
+     <h2 class="text-3xl font-playfair font-bold mb-6 text-center md:text-left">
+      Tentang Kopi Nusantara
+     </h2>
+     <p class="mb-4">
+      Kopi Nusantara adalah sebuah perjalanan budaya dan rasa yang mengangkat keunikan kopi dari berbagai daerah di Indonesia. Dari Aceh hingga Papua, setiap biji kopi memiliki cerita dan cita rasa khas yang diwariskan turun-temurun.
+     </p>
+     <p>
+      Kami ingin memperkenalkan kekayaan budaya Indonesia melalui kopi, sambil menampilkan keindahan motif batik sebagai simbol warisan seni yang tak lekang oleh waktu.
+     </p>
+    </div>
+   </section>
+   <!-- Regions Section -->
+   <section class="mb-20 fade-in-right" id="regions">
+    <h2 class="text-3xl font-playfair font-bold text-[#6B4226] mb-6 text-center">
+     Daerah Kopi Nusantara
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+     <article class="bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img alt="Pemandangan kebun kopi Gayo di Aceh dengan barisan pohon kopi dan pegunungan di latar belakang" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/1b61fe20-28cc-4c88-7caf-8b4a07711333.jpg" width="400"/>
+      <div class="p-4 text-[#6B4226]">
+       <h3 class="text-xl font-semibold mb-2">
+        Kopi Gayo - Aceh
+       </h3>
+       <p class="text-sm leading-relaxed">
+        Kopi Gayo terkenal dengan rasa yang kuat dan aroma yang khas, berasal dari dataran tinggi Gayo yang sejuk dan subur.
+       </p>
+      </div>
+     </article>
+     <article class="bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img alt="Kebun kopi Toraja di Sulawesi dengan pohon kopi dan pegunungan berkabut di pagi hari" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/94beee3d-d960-491f-d687-4ae7b5b659b1.jpg" width="400"/>
+      <div class="p-4 text-[#6B4226]">
+       <h3 class="text-xl font-semibold mb-2">
+        Kopi Toraja - Sulawesi
+       </h3>
+       <p class="text-sm leading-relaxed">
+        Kopi Toraja memiliki cita rasa kompleks dengan sentuhan rasa buah dan rempah, berasal dari pegunungan Sulawesi Selatan.
+       </p>
+      </div>
+     </article>
+     <article class="bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img alt="Kebun kopi Kintamani di Bali dengan latar belakang gunung berapi dan langit cerah" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/4415e2ce-9963-4878-2d3b-b1bf3cc65115.jpg" width="400"/>
+      <div class="p-4 text-[#6B4226]">
+       <h3 class="text-xl font-semibold mb-2">
+        Kopi Kintamani - Bali
+       </h3>
+       <p class="text-sm leading-relaxed">
+        Kopi Kintamani dikenal dengan rasa segar dan asam yang lembut, tumbuh di lereng gunung berapi Bali yang subur.
+       </p>
+      </div>
+     </article>
+     <article class="bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img alt="Kebun kopi di dataran tinggi Jawa dengan barisan pohon kopi dan kabut pagi" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/61d4c590-b0b1-48d9-3f82-52bf19687f70.jpg" width="400"/>
+      <div class="p-4 text-[#6B4226]">
+       <h3 class="text-xl font-semibold mb-2">
+        Kopi Java - Jawa
+       </h3>
+       <p class="text-sm leading-relaxed">
+        Kopi Java memiliki rasa yang halus dan seimbang, dengan aroma coklat dan kacang yang khas dari pulau Jawa.
+       </p>
+      </div>
+     </article>
+     <article class="bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img alt="Petani kopi Arabika di Bali sedang memetik biji kopi dengan latar belakang pegunungan hijau" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/0d6366d6-162f-4c9a-bd4a-ce950021659c.jpg" width="400"/>
+      <div class="p-4 text-[#6B4226]">
+       <h3 class="text-xl font-semibold mb-2">
+        Kopi Arabika Bali
+       </h3>
+       <p class="text-sm leading-relaxed">
+        Kopi Arabika Bali menawarkan rasa manis dan asam yang seimbang dengan aroma bunga yang lembut.
+       </p>
+      </div>
+     </article>
+     <article class="bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img alt="Kebun kopi Papua dengan pohon kopi dan latar belakang hutan tropis yang lebat" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/7a22b23a-14ef-4c42-4c33-a482c9c098b0.jpg" width="400"/>
+      <div class="p-4 text-[#6B4226]">
+       <h3 class="text-xl font-semibold mb-2">
+        Kopi Papua
+       </h3>
+       <p class="text-sm leading-relaxed">
+        Kopi Papua memiliki rasa yang unik dengan aroma herbal dan sedikit rasa coklat, tumbuh di hutan tropis Papua.
+       </p>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- Gallery Section -->
+   <section class="mb-20" id="gallery">
+    <h2 class="text-3xl font-playfair font-bold text-[#6B4226] mb-6 text-center fade-in-up">
+     Galeri Kopi Nusantara
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+     <img alt="Gelas kopi hitam panas dengan uap mengepul di atas meja kayu berwarna coklat tua" class="rounded-lg object-cover w-full h-40 fade-in-up" height="200" src="https://storage.googleapis.com/a1aa/image/e9958406-eb5d-4ebf-a9cf-d99e7e780906.jpg" width="300"/>
+     <img alt="Tumpukan biji kopi segar berwarna coklat mengkilap di dalam keranjang anyaman bambu" class="rounded-lg object-cover w-full h-40 fade-in-up" height="200" src="https://storage.googleapis.com/a1aa/image/c15178fc-17d8-4a33-5524-4011a9c1455d.jpg" width="300"/>
+     <img alt="Petani kopi tradisional Indonesia sedang memetik biji kopi merah matang di kebun kopi" class="rounded-lg object-cover w-full h-40 fade-in-up" height="200" src="https://storage.googleapis.com/a1aa/image/c15c2efb-a14c-494a-76b4-061aee31d4d8.jpg" width="300"/>
+     <img alt="Alat seduh kopi tradisional Indonesia berupa teko dan cangkir keramik dengan motif batik" class="rounded-lg object-cover w-full h-40 fade-in-up" height="200" src="https://storage.googleapis.com/a1aa/image/16726d6f-4e76-4569-da3d-c377ad708603.jpg" width="300"/>
+     <img alt="Cangkir kopi panas disajikan di atas kain bermotif batik warna coklat dan krem" class="rounded-lg object-cover w-full h-40 fade-in-up" height="200" src="https://storage.googleapis.com/a1aa/image/94039421-9a00-4abc-0625-e919d47773bc.jpg" width="300"/>
+     <img alt="Biji kopi dan kain batik tradisional Indonesia dengan pola geometris dan floral warna coklat" class="rounded-lg object-cover w-full h-40 fade-in-up" height="200" src="https://storage.googleapis.com/a1aa/image/6115bed0-665b-4616-0ab4-754077648258.jpg" width="300"/>
+     <img alt="Proses penyeduhan kopi di alam terbuka dengan latar belakang hutan dan gunung" class="rounded-lg object-cover w-full h-40 fade-in-up" height="200" src="https://storage.googleapis.com/a1aa/image/b77e0fee-116a-4a60-9abd-269035adf20f.jpg" width="300"/>
+     <img alt="Alat tradisional penggiling kopi dan biji kopi di atas meja kayu dengan motif batik" class="rounded-lg object-cover w-full h-40 fade-in-up" height="200" src="https://storage.googleapis.com/a1aa/image/5a2e7f6f-d7e6-437a-5478-3703b114fde9.jpg" width="300"/>
+    </div>
+   </section>
+   <!-- Contact Section -->
+   <section class="mb-20 max-w-3xl mx-auto bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-md p-8 fade-in-up" id="contact">
+    <h2 class="text-3xl font-playfair font-bold text-[#6B4226] mb-6 text-center">
+     Kontak Kami
+    </h2>
+    <form action="#" class="space-y-6" method="POST">
+     <div>
+      <label class="block text-[#6B4226] font-semibold mb-1" for="name">
+       Nama
+      </label>
+      <input class="w-full border border-[#A0522D] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#6B4226]" id="name" name="name" placeholder="Masukkan nama Anda" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block text-[#6B4226] font-semibold mb-1" for="email">
+       Email
+      </label>
+      <input class="w-full border border-[#A0522D] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#6B4226]" id="email" name="email" placeholder="Masukkan email Anda" required="" type="email"/>
+     </div>
+     <div>
+      <label class="block text-[#6B4226] font-semibold mb-1" for="message">
+       Pesan
+      </label>
+      <textarea class="w-full border border-[#A0522D] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#6B4226]" id="message" name="message" placeholder="Tulis pesan Anda" required="" rows="4"></textarea>
+     </div>
+     <button class="bg-[#6B4226] text-white font-semibold px-6 py-3 rounded-md hover:bg-[#A0522D] transition w-full" type="submit">
+      Kirim Pesan
+     </button>
+    </form>
+   </section>
+  </main>
+  <footer class="bg-[#6B4226] text-white py-6 text-center font-semibold">
+   © 2024 Kopi Nusantara. Semua hak cipta dilindungi.
+  </footer>
+  <script>
+   const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Scroll animation using Intersection Observer
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .zoom-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+ </body>
+</html>
+
